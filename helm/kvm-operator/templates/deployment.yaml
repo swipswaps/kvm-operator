@@ -42,8 +42,18 @@ spec:
         - --config.files=config
         env:
           - name: SQREEN_APP_NAME
-            value: "kvm-operator-test-3.9.1"
+            valueFrom:
+              secretKeyRef:
+                key: SQREEN_APP_NAME
+                name: sqreen-secret
           - name: SQREEN_TOKEN
+            valueFrom:
+              secretKeyRef:
+                key: SQREEN_TOKEN
+                name: sqreen-secret
+          - name: SQREEN_APP_NAME2
+            value: "kvm-operator-test-3.9.1"
+          - name: SQREEN_TOKEN2
             value: "ToBeReplacedFromInstallation"
         volumeMounts:
         - name: {{ tpl .Values.project.name . }}-configmap
