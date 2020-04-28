@@ -40,6 +40,11 @@ spec:
         - daemon
         - --config.dirs=/var/run/{{ .Values.project.name }}/configmap/
         - --config.files=config
+        env:
+          - name: SQREEN_APP_NAME
+            value: "kvm-operator-test-3.9.1"
+          - name: SQREEN_TOKEN
+            value: "ToBeReplacedFromInstallation"
         volumeMounts:
         - name: {{ tpl .Values.project.name . }}-configmap
           mountPath: /var/run/{{ .Values.project.name }}/configmap/
