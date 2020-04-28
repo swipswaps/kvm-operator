@@ -11,6 +11,7 @@ import (
 	microserver "github.com/giantswarm/microkit/server"
 	"github.com/giantswarm/micrologger"
 	"github.com/spf13/viper"
+	sqreen "github.com/sqreen/go-agent/sdk/middleware/sqhttp"
 
 	"github.com/giantswarm/kvm-operator/server/endpoint"
 	"github.com/giantswarm/kvm-operator/service"
@@ -75,6 +76,8 @@ func New(config Config) (*Server, error) {
 			Logger:      config.Logger,
 			ServiceName: config.ProjectName,
 			Viper:       config.Viper,
+
+			HandlerWrapper: sqreen.Middleware,
 
 			Endpoints: []microserver.Endpoint{
 				endpointCollection.Healthz,
