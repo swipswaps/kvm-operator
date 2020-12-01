@@ -3,11 +3,11 @@ module github.com/giantswarm/kvm-operator
 go 1.14
 
 require (
-	github.com/giantswarm/apiextensions/v3 v3.8.0
+	github.com/giantswarm/apiextensions/v3 v3.9.0
 	github.com/giantswarm/certs/v3 v3.1.0
 	github.com/giantswarm/errors v0.2.3
 	github.com/giantswarm/k8sclient/v5 v5.0.0
-	github.com/giantswarm/k8scloudconfig/v9 v9.1.4-0.20201130155903-777b45b32715
+	github.com/giantswarm/k8scloudconfig/v9 v9.2.1-0.20201201141749-6304b96b39af
 	github.com/giantswarm/microendpoint v0.2.0
 	github.com/giantswarm/microerror v0.2.1
 	github.com/giantswarm/microkit v0.2.2
